@@ -1,0 +1,23 @@
+# author: RZFeeser
+# github.com/rzfeeser
+# A simple playbook that makes an API call and displays some of the returned information to the screen
+
+- name: Query the People in Space API
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Call the open-notify API for current astronauts
+      ansible.builtin.uri:
+        url: http://api.open-notify.org/astros.json
+        method: GET
+        return_content: true
+        status_code: 200
+        headers:
+          Accept: application/json
+      register: space_data
+
+    - name: Display raw JSON response
+      ansible.builtin.debug:
+        var: space_data.json
