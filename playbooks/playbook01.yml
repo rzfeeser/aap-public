@@ -3,7 +3,7 @@
 # A simple playbook that makes an API call and displays some of the returned information to the screen
 
 - name: Query the People in Space API
-  hosts: localhost
+  hosts: all
   connection: local
   gather_facts: no
 
