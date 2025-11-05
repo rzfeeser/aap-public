@@ -1,2 +1,2 @@
 # aap-public
-Solutions for Ansible Automation Platform and AWX
+Solutions for Ansible Automation Platform and AWX   
