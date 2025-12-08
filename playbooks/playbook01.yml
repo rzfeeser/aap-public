@@ -4,7 +4,7 @@
 
 - name: Query the People in Space API
   hosts: all
-  connection: local
+  connection: ansible.builtin.local
   gather_facts: no
 
   tasks:
