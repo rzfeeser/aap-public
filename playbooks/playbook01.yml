@@ -8,6 +8,7 @@
   gather_facts: no
 
   tasks:
+    # make an API call to the url api.open-notify.org
     - name: Call the open-notify API for current astronauts
       ansible.builtin.uri:
         url: http://api.open-notify.org/astros.json
@@ -18,6 +19,7 @@
           Accept: application/json
       register: space_data
 
+    # display the saved response to standard out
     - name: Display raw JSON response
       ansible.builtin.debug:
         var: space_data.json
